@@ -1,0 +1,33 @@
+@import "./design-system/tokens.css";
+
+:root {
+  color: var(--flux-text);
+  background: var(--flux-bg);
+  font-family: var(--flux-font-family);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--flux-bg);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button {
+  color: inherit;
+  font: inherit;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--flux-cyan);
+  outline-offset: 2px;
+}

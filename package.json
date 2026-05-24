@@ -1,0 +1,75 @@
+{
+  "name": "donjon",
+  "version": "0.1.0",
+  "description": "A local dashboard companion for Sandcastle projects.",
+  "type": "module",
+  "bin": {
+    "donjon": "./dist/cli/index.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./sandcastle": {
+      "types": "./dist/wrapper/sandcastle.d.ts",
+      "import": "./dist/wrapper/sandcastle.js"
+    },
+    "./sandboxes/docker": {
+      "types": "./dist/wrapper/sandboxes/docker.d.ts",
+      "import": "./dist/wrapper/sandboxes/docker.js"
+    },
+    "./sandboxes/podman": {
+      "types": "./dist/wrapper/sandboxes/podman.d.ts",
+      "import": "./dist/wrapper/sandboxes/podman.js"
+    },
+    "./sandboxes/vercel": {
+      "types": "./dist/wrapper/sandboxes/vercel.d.ts",
+      "import": "./dist/wrapper/sandboxes/vercel.js"
+    },
+    "./sandboxes/daytona": {
+      "types": "./dist/wrapper/sandboxes/daytona.d.ts",
+      "import": "./dist/wrapper/sandboxes/daytona.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "package.json"
+  ],
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "npm run build:node && npm run build:ui",
+    "build:node": "tsc -p tsconfig.node.json",
+    "build:ui": "vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepare": "npm run build"
+  },
+  "peerDependencies": {
+    "@ai-hero/sandcastle": "*"
+  },
+  "peerDependenciesMeta": {
+    "@ai-hero/sandcastle": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "open": "^10.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tsx": "^4.20.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.18",
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
+    "@vitejs/plugin-react": "^4.5.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vitest": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=18.18"
+  }
+}

@@ -81,6 +81,7 @@ export function App(): ReactElement {
 
   return (
     <FluxDashboard
+      events={events}
       state={state}
       selectedRunId={selectedRunId}
       logFilter={logFilter}

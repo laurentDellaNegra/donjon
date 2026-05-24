@@ -78,7 +78,7 @@ Responsive behavior:
 
 `FluxDashboard` currently owns the production composition:
 
-- Summary rail with live run/log counts and no fake navigation.
+- Summary rail with live run/log counts and no placeholder navigation.
 - Header with live session status and health.
 - KPI strip backed by event, failure, duration, and active-run state.
 - Run list with selection behavior.
